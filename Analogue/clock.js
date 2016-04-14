@@ -2,9 +2,9 @@ function Clock(elem) {
 	var clock = document.querySelector(elem);
 	var _this = this;
 
-	Clock.prototype.second_deg  = 360 / 60;
+	Clock.prototype.second_deg  = 360 / 6;
 	Clock.prototype.minute_deg 	= 360 / 60;
-	Clock.prototype.hour_deg 	= 360 / 12;
+	Clock.prototype.hour_deg 	= 360 / 1.2;
 
 	var second_rot,
 		minute_rot,
@@ -48,7 +48,7 @@ function Clock(elem) {
 				return degrees * current;
 			} 
 			
-			return current_rotation + degrees;
+			return current_rotation + (degrees / 10);
 		}
 
 		return current_rotation
