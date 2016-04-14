@@ -1,0 +1,169 @@
+#hours {
+	--light-color: #e74c3c;
+	--dark-color: #cf2e1d;
+}
+
+#mins {
+	--light-color: #2ecc71;
+	--dark-color: #16b65a;
+}
+
+#seconds {
+	--light-color: #f1c40f;
+	--dark-color: #e3b80d;
+}
+	
+	.clock-holder {
+		position: absolute;
+		top: 200px;
+		left: 50%;
+		width: 500px;
+		text-align: center;
+		margin-left: -200px;
+	}
+	
+	.clock-wrap {
+		background-color: var(--dark-color);
+		display: inline-block;
+		border-radius: 5px;
+	}
+	
+	.clock {
+		background-color: var(--dark-color);
+		width: 135px;
+		height: 150px;
+		border-radius: 5px;
+		color: #fff;
+		font-size: 60px;	
+		display: inline-block;
+		position: relative;
+	    font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+		letter-spacing: 0.5px;
+	
+	animation-duration: 1.4s;
+}
+
+.animate.clock {
+	animation-name: clock;
+	animation-duration: 1.4s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+}
+
+.animate .clock-upper {
+    animation-name: clock-fold;
+	animation-duration: inherit;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+}
+
+.animate .clock-upper .next-val {
+	animation-name: clock-next;
+	animation-duration: inherit;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+}
+
+.next-val {
+	position: absolute;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	margin-left: -35px;
+	top: 50%;
+	margin-top: -37px;
+	text-align: center;
+}
+
+.clock-upper {
+	background-color: var(--light-color);
+	width: 100%;
+	height: 50%;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+	text-align: center;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    overflow: hidden;
+    z-index: 1;
+    border-bottom: 1px solid var(--dark-color);
+}
+
+	.clock-upper .next-val {
+		color: var(--light-color);
+		top: auto;
+		bottom: -38px;
+		margin-top: 0;
+		margin-left: -35px;
+		transform: rotate(180deg) scaleX(-1);
+   		z-index: 0;
+	}				
+
+	.clock-upper .val {
+		position: absolute;
+		bottom: -35px;
+		text-align: center;
+		z-index: 1;
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		left: 50%;
+		margin-left: -35px;
+		
+	}
+	
+.clock-lower {
+	overflow: hidden;
+	position: relative;
+	background-color: var(--light-color);
+	width: 100%;
+	height: 50%;
+	border-radius: 0 0 5px 5px;
+	z-index: 0;
+	
+}
+
+	.clock-lower .val {
+		position: absolute;
+		top: -36px;
+		text-align: center;
+		font-size: 60px;	
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		left: 50%;
+		margin-left: -35px;
+	}
+
+@keyframes clock {
+    100% {
+        background-color: var(--light-color);
+    }
+}
+
+@keyframes clock-fold {
+	0, 50% {
+		color: #9b9b9b;
+	}
+	
+	51% {
+		color: var(--dark-color);
+	}
+	
+    52%, 100% {
+    	top: -1px;
+    	opacity: 1;
+    	-webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        background-color: inherit;
+        color: var(--light-color);
+    }
+}
+
+@keyframes clock-next {
+    52%, 100% {
+        color: #fff;
+        z-index: 3;
+    } 
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="clock.css">
+		<script src="clock.js"></script>
+	</head>
+	<body>
+		<div class="clock-holder">
+			<div class="clock" id="hours">
+				<div class="next-val"></div>
+				<div class="clock-upper">
+					<span class="val"></span>
+					<span class="next-val"></span>
+				</div>
+				<div class="clock-lower">
+					<span class="val"></span>
+				</div>
+			</div>
+		
+			<div class="clock" id="mins">
+				<div class="next-val"></div>
+				<div class="clock-upper">
+					<span class="val"></span>
+					<span class="next-val"></span>
+				</div>
+				<div class="clock-lower">
+					<span class="val"></span>
+				</div>
+			</div>
+		
+			<div class="clock" id="seconds">
+				<div class="next-val"></div>
+				<div class="clock-upper">
+					<span class="val"></span>
+					<span class="next-val"></span>
+				</div>
+				<div class="clock-lower">
+					<span class="val"></span>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			var hour = new Clock("#hours", 'hour', 2)
+			var mins = new Clock("#mins", 'minute');
+			var secs = new Clock("#seconds", 'second', 0.75);
+		</script>	
+	</body>
+</html>

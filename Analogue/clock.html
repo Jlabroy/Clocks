@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="clock.css">
+		<script src="clock.js"></script>
+	</head>
+	<body>
+		<div class="clock-holder">
+			<div class="clock">
+				<div class="time"></div>
+				<div class="time"></div>
+				<div class="time"></div>
+				<div class="time"></div>
+
+				<div class="dial"></div>
+				<div class="hand hours"></div>
+				<div class="hand minutes"></div>
+				<div class="hand seconds"></div>
+
+				<div class="guide1"></div>
+				<div class="guide2"></div>
+			</div>
+		</div>
+
+		<script>
+			var clock = new Clock(".clock");
+			clock.init();
+		</script>
+	</body>
+</html>
