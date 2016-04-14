@@ -10,7 +10,7 @@ Two different clocks one is a digital flip clock, and the other a traditional ci
 
 ### Flip Clock
 You can build different clocks by adding more clocks
-HTML
+#### HTML
 ```
 <div class="clock" id="hours">
 	<div class="next-val"></div>
@@ -24,7 +24,7 @@ HTML
 </div>
 ```
 
-JavaScript
+#### JavaScript
 ```
 var hour = new Clock("#hours", 'hour', 2);
 ```
@@ -36,7 +36,7 @@ period_interval can be:
 - minute
 - second
 
-CSS
+#### CSS
 
 Uses CSS variables to determine colour for each clock widget. You can change the colour of the clocks by setting a dark and light colour:
 ```
@@ -48,7 +48,8 @@ Uses CSS variables to determine colour for each clock widget. You can change the
 
 ### Analogue Clock
 Slightly more simple than the flip clock. One method.
-HTML
+
+#### HTML
 ```
 <div class="clock-holder">
 	<div class="clock">
@@ -65,7 +66,7 @@ HTML
 </div>
 ```
 
-JavaScript
+#### JavaScript
 ```
 var clock = new Clock(".clock");
 clock.init();
