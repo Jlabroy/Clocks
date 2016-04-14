@@ -3,7 +3,7 @@ function Clock(elem) {
 	var _this = this;
 
 	Clock.prototype.second_deg  = 360 / 60;
-	Clock.prototype.minute_deg 	= 360 / 600;
+	Clock.prototype.minute_deg 	= 360 / 60;
 	Clock.prototype.hour_deg 	= 360 / 12;
 
 	var second_rot,
@@ -39,11 +39,11 @@ function Clock(elem) {
 		_this.prev_minute = minutes;
 		_this.prev_hour   = hours;
 
-		_this.setTime(this.hour_rot, _this.minute_rot, _this.second_rot - 360);
+		_this.setTime(this.hour_rot, _this.minute_rot, _this.second_rot);
 	}
 
 	Clock.prototype.calcDegree = function(current, last, current_rotation, degrees) {
-		if (current != last) {
+		if (Math.round(current) != Math.round(last)) {
 			if (last == null) {
 				return degrees * current;
 			} 
